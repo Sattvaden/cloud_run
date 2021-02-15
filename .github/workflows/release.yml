@@ -11,6 +11,7 @@ env:
   den_dev: devvalue
   den_qa: qavalue
   den_prod: sdlfdjf
+  project: ${{ secrets.RUN_PROJECT }}
 
 jobs:
   build:
@@ -34,3 +35,4 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
+       echo $project
