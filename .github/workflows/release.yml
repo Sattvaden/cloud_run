@@ -2,8 +2,6 @@ name: Denis
 
 on:
   push:
-     branches:
-      - master
     tags:
       - 'den-tanik-dev'
       - 'den-tanik-qa'
