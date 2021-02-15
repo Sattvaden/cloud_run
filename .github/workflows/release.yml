@@ -1,7 +1,11 @@
 on:
   push:
     tags:
-      - 'den'
+      - 'den-tanik-dev'
+      - 'den-tanik-qa'
+
+env:
+  tag: ${{ github }}
 
 jobs:
   build:
@@ -20,6 +24,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+      run: |
+      echo den
+
     - name: Build with Maven
       run: |
         mvn -B package --file pom.xml
