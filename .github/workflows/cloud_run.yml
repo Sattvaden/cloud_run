@@ -2,8 +2,8 @@ name: Build and Deploy to Cloud Run
 
 on:
   push:
-    branches:
-    - master
+    tag:
+    - 'den'
 
 env:
   PROJECT_ID: ${{ secrets.RUN_PROJECT }}
