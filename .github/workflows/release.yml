@@ -2,6 +2,14 @@ name: Denis
 
 on:
   push:
+    tags:
+     - 'test-gcp-dev'
+     - 'test-gcp-qa'
+
+env:
+  tag: ${{ github.ref }}
+  den_dev: devvalue
+  den_qa: qavalue
 
 jobs:
   build:
@@ -20,4 +28,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-      run: echo den
+
+    - name: Some Name
+      run: |
+       prefix="den_$(echo $tag|cut -d\- -f3)"
+       echo ${!prefix}
