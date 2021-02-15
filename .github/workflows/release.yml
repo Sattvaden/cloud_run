@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-1'
+     - 'test-gcp-dev-2'
      - 'test-gcp-qa'
 
 env:
@@ -35,5 +35,5 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       echo $project >> file.txt
+       $project > file.txt
        cat file.txt
