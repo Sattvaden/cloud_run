@@ -28,11 +28,3 @@ jobs:
         java-version: 1.8
       run: |
       echo den
-
-    - name: Build with Maven
-      run: |
-        mvn -B package --file pom.xml
-        ls -a
-        mvn -B package --file helloworld/pom.xml
-        cd helloworld
-        ls -a
