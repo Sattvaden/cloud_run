@@ -2,12 +2,6 @@ name: Denis
 
 on:
   push:
-    tags:
-      - 'den-tanik-dev'
-      - 'den-tanik-qa'
-
-env:
-  tag: ${{ github }}
 
 jobs:
   build:
