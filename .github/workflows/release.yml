@@ -10,6 +10,7 @@ env:
   tag: ${{ github.ref }}
   den_dev: devvalue
   den_qa: qavalue
+  den_prod: sdlfdjf
 
 jobs:
   build:
