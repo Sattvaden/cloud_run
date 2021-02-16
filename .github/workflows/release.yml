@@ -3,12 +3,12 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-19'
+     - 'test-gcp-dev-20'
      - 'test-gcp-qa'
 
 env:
   tag: ${{ github.ref }}
-  den_dev: ${{ secrets.BOHDAN }}
+  den_dev: ${{ secrets.KEY }}
   den_qa: qavalue
   den_prod: sdlfdjf
   tanik: ${{ secrets.TANIK }}
