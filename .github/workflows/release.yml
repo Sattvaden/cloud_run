@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-4'
+     - 'test-gcp-dev-5'
      - 'test-gcp-qa'
 
 env:
