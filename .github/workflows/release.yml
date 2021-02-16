@@ -3,12 +3,12 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-18'
+     - 'test-gcp-dev-19'
      - 'test-gcp-qa'
 
 env:
   tag: ${{ github.ref }}
-  den_dev: devvalue
+  den_dev: ${{ secrets.BOHDAN }}
   den_qa: qavalue
   den_prod: sdlfdjf
   tanik: ${{ secrets.TANIK }}
@@ -35,8 +35,6 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix} >> pref.json
-       cat pref.json
-       echo $tanik >> file.json
-       base64 --decode file.json > orig.json
+       base64 --decode pref.json > orig.json
        cat orig.json
 
