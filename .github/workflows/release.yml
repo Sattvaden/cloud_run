@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-5'
+     - 'test-gcp-dev-6'
      - 'test-gcp-qa'
 
 env:
@@ -11,7 +11,7 @@ env:
   den_dev: devvalue
   den_qa: qavalue
   den_prod: sdlfdjf
-  project: ${{ secrets.TANIK }}
+  tanik: ${{ secrets.TANIK }}
 
 jobs:
   build:
@@ -35,5 +35,4 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       base64 -d $(echo $project) > file.txt
-       cat file.txt
+       echo 'denis' | base64
