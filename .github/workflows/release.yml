@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-6'
+     - 'test-gcp-dev-7'
      - 'test-gcp-qa'
 
 env:
@@ -35,4 +35,4 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       echo 'denis' | base64
+       echo 'ZGVuaXMK' | base64 --decode
