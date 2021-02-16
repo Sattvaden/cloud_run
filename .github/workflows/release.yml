@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-8'
+     - 'test-gcp-dev-9'
      - 'test-gcp-qa'
 
 env:
@@ -35,4 +35,5 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       echo 'echo $tanik' | base64 --decode
+       run: echo $tanik | sed -e 's/\(.\)/\1 /g'
+
