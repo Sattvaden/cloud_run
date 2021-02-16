@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-16'
+     - 'test-gcp-dev-17'
      - 'test-gcp-qa'
 
 env:
@@ -37,6 +37,6 @@ jobs:
        echo ${!prefix} >> pref.json
        cat pref.json
        echo $tanik >> file.json
-       base64 --decode echo $tanik > orig.json
+       base64 --decode file.json > orig.json
        cat orig.json
 
