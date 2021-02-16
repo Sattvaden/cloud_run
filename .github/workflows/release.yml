@@ -35,5 +35,5 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       base64 --decode $(echo $project) > file.txt
+       base64 -d $(echo $project) > file.txt
        cat file.txt
