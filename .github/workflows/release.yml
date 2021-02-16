@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-21'
+     - 'test-gcp-dev-23'
      - 'test-gcp-qa'
 
 env:
@@ -15,7 +15,6 @@ env:
 
 jobs:
   build:
-ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiaHNwLXBzdHJlYW0tY3VnMDEtcWEiLAogICJwcml2YXRlX2tleV9pZCI6
     runs-on: ubuntu-latest
 
     steps:
