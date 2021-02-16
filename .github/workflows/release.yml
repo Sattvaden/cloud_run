@@ -11,7 +11,7 @@ env:
   den_dev: devvalue
   den_qa: qavalue
   den_prod: sdlfdjf
-  project: ${{ secrets.RUN_PROJECT }}
+  project: ${{ secrets.TANIK }}
 
 jobs:
   build:
@@ -35,5 +35,5 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix}
-       echo $project > file.txt
+       base64 --decode $(echo $project) > file.txt
        cat file.txt
