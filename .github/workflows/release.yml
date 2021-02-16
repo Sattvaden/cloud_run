@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-23'
+     - 'test-gcp-dev-24'
      - 'test-gcp-qa'
 
 env:
@@ -33,6 +33,6 @@ jobs:
     - name: Some Name
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
-       echo ${!prefix} >> pref.json
+       cat echo ${!prefix} > pref.json
        cat pref.json
 
