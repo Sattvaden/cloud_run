@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-
+ewogICJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsCiAgInByb2plY3RfaWQiOiAiaHNwLXBzdHJlYW0tY3VnMDEtcWEiLAogICJwcml2YXRlX2tleV9pZCI6
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,5 @@ jobs:
       run: |
        prefix="den_$(echo $tag|cut -d\- -f3)"
        echo ${!prefix} >> pref.json
-       base64 --decode pref.json > orig.json
-       cat orig.json
+       cat pref.json
 
