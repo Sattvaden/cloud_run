@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-36'
+     - 'test-gcp-dev-37'
      - 'test-gcp-qa'
 
 env:
@@ -17,6 +17,6 @@ jobs:
     steps:
     - name: Set Environment Variable
       run: |
-        cat ${{ secrest.KEY }} > file.json
+        cat ${{ secrets.KEY }} > file.json
         cat file.json
 
