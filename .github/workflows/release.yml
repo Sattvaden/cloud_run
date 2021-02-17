@@ -3,12 +3,13 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-44'
+     - 'test-gcp-dev-45'
      - 'test-gcp-qa'
 
 env:
   tag: ${{ github.ref }}
   key: ${{ secrets.KEY }}
+  SECRETS_KEY: ${{secrets.KEY}}
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
     - name: Set Environment Variable
       run: |
         echo 'a<<EOF' >> $GITHUB_ENV
-        printf '${{ secrets.KEY }}' >> $GITHUB_ENV
+        printenv SECRETS_KEY >> $GITHUB_ENV
         echo 'EOF' >> $GITHUB_ENV
 
     - name: Use the value
