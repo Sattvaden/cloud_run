@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'test-gcp-dev-34'
+     - 'test-gcp-dev-35'
      - 'test-gcp-qa'
 
 env:
@@ -17,7 +17,6 @@ jobs:
     steps:
     - name: Set Environment Variable
       run: |
-        den=leo
         echo "a=$key" >> $GITHUB_ENV
 
     - name: Use the value
