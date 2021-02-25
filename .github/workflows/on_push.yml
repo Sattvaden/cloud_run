@@ -9,9 +9,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: shogo82148/actions-mutex@v1
-        with:
-          key: deploy
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy
         run: sleep 60
