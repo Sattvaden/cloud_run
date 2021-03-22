@@ -16,6 +16,6 @@ jobs:
     steps:
     - name: Set ${{ github.ref }}
       run: |
-        $version = "${{ github.ref }}".FirstIndexOf("-")
+        $version = "${{ github.ref }}".IndexOf("-")
         echo $version
 
