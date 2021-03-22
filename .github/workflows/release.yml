@@ -5,6 +5,7 @@ on:
     tags:
      - 'test-gcp-dev-47'
      - 'test-gcp-qa'
+     - 'release-plugin-[0-9]+.[0-9]+.[0-9]+*'
 
 env:
   tag: ${{ github.ref }}
@@ -15,13 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set Environment Variable
-      run: |
-        echo 'a<<EOF' >> $GITHUB_ENV
-        echo "$key" >> $GITHUB_ENV
-        echo 'EOF' >> $GITHUB_ENV
-
-    - name: Use the value
-      run: |
-        echo "${{ env.a }}"
+    - name: Set ${{ github.ref }}
+      run: echo den
 
