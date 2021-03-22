@@ -15,5 +15,5 @@ jobs:
 
     steps:
     - name: Set ${{ github.ref }}
-      run: echo Tanik
+      run: echo ${{ github.run_number }}
 
