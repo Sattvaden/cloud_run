@@ -11,10 +11,11 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Set ${{ github.ref }}
       run: |
-        $version = "${{ github.ref }}".Substring\(3\)
+        $version = "${{ github.ref }}".Substring(3)
+        echo $version
 
