@@ -17,5 +17,4 @@ jobs:
     - name: Set ${{ github.ref }}
       run: |
         $version = "${{ github.ref }}".Substring(3)
-        echo $version
 
