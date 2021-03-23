@@ -17,8 +17,11 @@ jobs:
     - name: Set
       run: |
         tag=${{ github.ref }}
+        run_number=${{ github.run_number }}
         first=$( echo $tag| cut -d'-' -f1)
         second=$( echo $tag| cut -d'-' -f2)
         version=$( echo $tag| cut -d'-' -f3)
-        echo $version
+        len=$((${#first} + ${#second} + ${#version} + 2))
+        tail=${tag:$len}
+        echo $version.$run_number$tail
 
