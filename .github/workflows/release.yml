@@ -21,7 +21,7 @@ jobs:
         first=$( echo $tag| cut -d'-' -f1)
         second=$( echo $tag| cut -d'-' -f2)
         version=$( echo $tag| cut -d'-' -f3)
-        len=$((${#first} + ${#second} + ${#version) + 3)
+        len=$((${#first} + ${#second} + ${#version} + 3)
         tail=${tag:$len}
         echo $version$run_number$tail
 
