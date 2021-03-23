@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'release-gcp-dev-[0-9]+.[0-9]+.[0-9]+*'
+     - 'release-plugin-[0-9]+.[0-9]+.[0-9]+*'
 
 env:
   tag: ${{ github.ref }}
@@ -16,10 +16,12 @@ jobs:
     steps:
     - name: Set
       run: |
+        run_number=${{ github.run_number }}
         tag=${{ github.ref }}
         first=$( echo $tag| cut -d'-' -f1)
         second=$( echo $tag| cut -d'-' -f2)
-        len=$((${#first} + ${#second} + 2))
-        version=${tag:$len}
-        echo $version
+        version=$( echo $tag| cut -d'-' -f3)
+        len=$((${#first} + ${#second} + ${#version) + 3)
+        tail=${tag:$len}
+        echo $version$run_number$tail
 
