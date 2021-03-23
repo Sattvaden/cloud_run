@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set ${{ github.ref }}
+    - name: Set ${{ github.ref }}| cut -d'-' -f3
       run: |
-        environ=${{ github.ref }}| cut -d'-' -f3
-        echo $environ
+        r=${{ github.ref }}
+        echo $r
 
