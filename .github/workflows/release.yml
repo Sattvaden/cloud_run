@@ -19,7 +19,6 @@ jobs:
         tag=${{ github.ref }}
         first=$( echo $tag| cut -d'-' -f1)
         second=$( echo $tag| cut -d'-' -f2)
-        len=$((${#first} + ${#second} + 2))
-        version=${tag:$len}
+        version=$( echo $tag| cut -d'-' -f3)
         echo $version
 
