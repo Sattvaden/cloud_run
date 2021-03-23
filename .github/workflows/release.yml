@@ -16,8 +16,10 @@ jobs:
     steps:
     - name: Set
       run: |
-        environment=$( echo ${{ github.ref }}| cut -d'-' -f3)
-        e=${GITHUB_REF/refs\/tags}
-        echo $e
-        echo $environment
+        tag=${{ github.ref }}
+        first=$( echo $tag| cut -d'-' -f1)
+        second=$( echo $tag| cut -d'-' -f2)
+        len=$((${#first} + ${#second} + 2))
+        version=${tag:$len}
+        echo $version
 
