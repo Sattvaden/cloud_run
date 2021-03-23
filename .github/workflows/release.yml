@@ -16,11 +16,10 @@ jobs:
     steps:
     - name: Set
       run: |
-        run_number=${{ github.run_number }}
         tag=${{ github.ref }}
         first=$( echo $tag| cut -d'-' -f1)
         second=$( echo $tag| cut -d'-' -f2)
-        len=$((${#first} + ${#second} + 2)
-        tail=${tag:$len}
-        echo $run_number$tail
+        len=$((${#first} + ${#second} + 2))
+        version=${tag:$len}
+        echo $version
 
