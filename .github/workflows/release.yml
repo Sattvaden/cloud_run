@@ -16,6 +16,6 @@ jobs:
     steps:
     - name: Set ${{ github.ref }}| cut -d'-' -f3
       run: |
-        r=${{ github.ref }}
+        r=echo $(${{ github.ref }}| cut -d'-' -f3)
         echo $r
 
