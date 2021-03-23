@@ -17,5 +17,7 @@ jobs:
     - name: Set
       run: |
         environment=$( echo ${{ github.ref }}| cut -d'-' -f3)
+        e=${GITHUB_REF/refs\/tags}
+        echo $e
         echo $environment
 
