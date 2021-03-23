@@ -16,6 +16,6 @@ jobs:
     steps:
     - name: Set
       run: |
-        r="${{ github.ref }}"| cut -d'-' -f3
-        echo $r
+        environment=$( echo ${{ github.ref }}"| cut -d'-' -f3)
+        echo $environment
 
