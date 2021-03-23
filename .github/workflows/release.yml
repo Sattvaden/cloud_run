@@ -3,7 +3,7 @@ name: Denis
 on:
   push:
     tags:
-     - 'release-plugin-[0-9]+.[0-9]+.[0-9]+*'
+     - 'release-gcp-dev-[0-9]+.[0-9]+.[0-9]+*'
 
 env:
   tag: ${{ github.ref }}
@@ -11,11 +11,11 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Set ${{ github.ref }}
       run: |
-        $version = "${{ github.ref }}".split("-")[2]
-        echo $version
+        environ=${{ github.ref }}| cut -d'-' -f3
+        echo $environ
 
