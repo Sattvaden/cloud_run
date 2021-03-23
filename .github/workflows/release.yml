@@ -16,12 +16,9 @@ jobs:
     steps:
     - name: Set
       run: |
-        tag=${{ github.ref }}
-        run_number=${{ github.run_number }}
-        first=$( echo $tag| cut -d'-' -f1)
-        second=$( echo $tag| cut -d'-' -f2)
-        version=$( echo $tag| cut -d'-' -f3)
-        len=$((${#first} + ${#second} + ${#version} + 2))
+        head=$( echo ${{ github.ref }}| cut -d'-' -f1)$( echo ${{ github.ref }}| cut -d'-' -f2)
+        version=$( echo ${{ github.ref }}| cut -d'-' -f3)
+        len=$((${#head} + ${#version} + 2))
         tail=${tag:$len}
         echo $version.${{ github.run_number }}$tail
 
