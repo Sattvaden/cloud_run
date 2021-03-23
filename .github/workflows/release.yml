@@ -23,5 +23,5 @@ jobs:
         version=$( echo $tag| cut -d'-' -f3)
         len=$((${#first} + ${#second} + ${#version} + 2))
         tail=${tag:$len}
-        echo $version.$run_number$tail
+        echo $version.${{ github.run_number }}$tail
 
