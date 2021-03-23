@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set ${{ github.ref }}| cut -d'-' -f3
+    - name: Set
       run: |
-        r=echo $(${{ github.ref }}| cut -d'-' -f3)
+        r=$(${{ github.ref }}| cut -d'-' -f3)
         echo $r
 
