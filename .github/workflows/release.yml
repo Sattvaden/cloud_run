@@ -16,9 +16,9 @@ jobs:
     steps:
     - name: Set Environment And Version
       run: |
-        environment=$( echo ${{ github.ref }}| cut -d'-' -f3)
+        environment=$( echo {{ github.ref }}| cut -d'-' -f3)
         echo "environment=${environment}" >> $GITHUB_ENV
-        version=$( echo ${{ github.fer }}| cut -d'-' -f4)
+        version=$( echo {{ github.ref }}| cut -d'-' -f4)
         echo "version=${version}" >> $GITHUB_ENV
         echo ${{ env.environment }}
         echo ${{ env.version }}
