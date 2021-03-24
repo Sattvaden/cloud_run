@@ -18,8 +18,7 @@ jobs:
       run: |
         env_version=${GITHUB_REF/refs\/tags\/release-gcp-/}
         environment=$( echo $env_version| cut -d'-' -f1)
-        len=${#environment}
-        version=${env_version:$len}
+        version=${env_version:$((1 + ${#environment}))}
         echo $environment
         echo $version
 
