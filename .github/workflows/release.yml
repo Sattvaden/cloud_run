@@ -18,9 +18,11 @@ jobs:
       run: |
         tag=${{ github.ref }}
         environment=$( echo $tag| cut -d'-' -f3)
+        echo $environment
         echo "environment=${environment}" >> $GITHUB_ENV
         version=$( echo $tag| cut -d'-' -f4)
         echo "version=${version}" >> $GITHUB_ENV
+        echo $version
         echo ${{ env.environment }}
         echo ${{ env.version }}
 
