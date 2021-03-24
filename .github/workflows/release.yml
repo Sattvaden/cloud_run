@@ -21,7 +21,7 @@ jobs:
         len=${#environment}
         version=${env_version:$len}
         echo $environment
-        echo version
+        echo $version
 
 
 
