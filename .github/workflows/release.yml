@@ -16,14 +16,12 @@ jobs:
     steps:
     - name: Set Environment And Version
       run: |
-        tag=${{ github.ref }}
-        environment=$( echo $tag| cut -d'-' -f3)
+        env_version=${GITHUB_REF/refs\/tags\/release-gcp-/}
+        environment=$( echo $env_version| cut -d'-' -f1)
+        len=${#environment}
+        version=${env_version:$len}
         echo $environment
-        echo "environment=${environment}" >> $GITHUB_ENV
-        version=$( echo $tag| cut -d'-' -f4)
-        echo "version=${version}" >> $GITHUB_ENV
-        echo $version
-        echo ${{ env.environment }}
-        echo ${{ env.version }}
+        echo version
+
 
 
